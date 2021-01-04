@@ -1,0 +1,190 @@
+GET http://localhost:8080/airCrafts
+
+###
+
+GET http://localhost:8080/flights/1
+
+###
+GET http://localhost:8080/flights/19
+
+###
+
+POST http://localhost:8080/flights/1/save?airline="Уральские Авиалинии"&model="Ил-62"&capacity=80
+
+###
+
+
+POST http://localhost:8080/flights/0/save?airline="British Airways"&model="Ил-95"&capacity=220
+
+###
+
+POST http://localhost:8080/flights/19/remove
+
+###
+
+GET http://localhost:8080/flights
+
+###
+
+http://localhost:8080/flights/
+
+###
+
+http://localhost:8080/flights/0/save?aircraftId=9&sourceCity=&destCity=&departureTime=10000&arrivalTime=200000&journeyDuration=500&price=15000
+
+###
+
+http://localhost:8080/flights/8/delete
+
+###
+
+http://localhost:8080/flights/0/save?aircraftId=9&sourceCity=Kazakhstan&destCity=Turkey&departureTime=10000&arrivalTime=200000&journeyDuration=500&price=15000
+
+###
+
+http://localhost:8080/flights/0/save?aircraftId=12&sourceCity=Volgograd&destCity=Moscow&departureTime=1607979600000&arrivalTime=200000&journeyDuration=500&price=15000
+
+###
+
+http://localhost:8080/flights/2
+
+###
+
+http://localhost:8080/flights/search?sourceCity=kaz&destCity=mo&departureTime=1607979600000
+
+###
+
+http://localhost:8080/flights/sort/price?sourceCity=ka&destCity=mos&departureTime=15.12.2020
+
+
+###
+
+http://localhost:8080/flights/sort/departure?sourceCity=ka&destCity=mo&departureTime=15.12.2020
+
+###
+
+GET  http://localhost:8081/flights/search?sourceCity=ka&destCity=mo&departureTime=2020-12-17
+
+###
+POST http://localhost:8080/flights
+Content-Type: application/json
+
+{
+  "id": 0,
+  "aircraftId": 12,
+  "sourceCity": "Volgograd",
+  "destCity": "Moscow",
+  "departureTime": 1607979600000,
+  "arrivalTime": 200000,
+  "journeyDuration": 500,
+  "price": 15000
+}
+
+###
+
+DELETE http://localhost:8080/flights/4
+
+
+###
+GET  http://localhost:8080/flights/sort/price?sourceCity=ka&destCity=mo&departureTime=15.12.2020
+
+###
+
+GET http://localhost:8080/flights/by-aircraft/2
+
+
+###
+
+
+GET http://localhost:7070/tickets/byFlight/1
+
+
+###
+
+GET http://localhost:7070/tickets/search?passengerName=S
+
+###
+
+GET http://localhost:8080/airlines
+
+###
+
+GET http://localhost:8080/airlines/4
+
+###
+
+POST http://localhost:8080/airlines
+Content-Type: application/json
+
+{
+  "id": 10,
+  "name": "Sweden"
+}
+###
+
+DELETE http://localhost:8080/airlines/2
+
+
+###
+
+GET http://localhost:8080/airCrafts
+
+###
+
+GET http://localhost:8080/airCrafts/1
+
+###
+
+POST http://localhost:8080/airCrafts
+Content-Type: application/json
+
+{
+  "id": 0,
+  "airline": {
+    "id": 7,
+    "name": "North Wind"
+  },
+  "model": "Boeing 745",
+  "capacity": 300
+}
+
+###
+
+DELETE http://localhost:8080/airCrafts/2
+
+###
+
+GET http://localhost:8080/tickets/search?passengerName=Sergey
+
+
+###
+
+DELETE http://localhost:8080/tickets/1
+
+
+###
+
+POST http://localhost:8080/tickets
+Content-Type: application/json
+
+{
+  "id": 0,
+  "flight": {
+    "id": 1,
+    "aircraftId": 1,
+    "sourceCity": "KAZAN",
+    "destCity": "MOSCOW",
+    "departureTime": 1500000,
+    "arrivalTime": 1608163200000,
+    "journeyDuration": 100000,
+    "price": 30000
+  },
+  "passenger": {
+    "id": 1,
+    "name": "SERGEY",
+    "age": 25,
+    "passport": 1,
+    "registration": "Kazan",
+    "luggage": false
+  }
+}

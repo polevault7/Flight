@@ -1,0 +1,82 @@
+GET  http://localhost:8081/flights/search/return?sourceCity=ka&destCity=mo&departureTime=17.12.2020&departureTimeBack=25.12.2020
+
+###
+
+GET http://localhost:7070/tickets/byFlight/1
+
+###
+POST http://localhost:7070/tickets/
+Content-Type: application/json
+
+{
+  "id": 1,
+  "flightId": 1,
+  "passengerName": "Sonya"
+}
+
+###
+
+
+
+POST http://localhost:7070/flights
+Content-Type: application/json
+
+{
+  "id": 0,
+  "aircraftId": 12,
+  "sourceCity": "Volgograd",
+  "destCity": "Moscow",
+  "departureTime": 1607979600000,
+  "arrivalTime": 200000,
+  "journeyDuration": 500,
+  "price": 15000
+}
+
+###
+
+GET http://localhost:7070/flights
+
+
+###
+
+GET  http://localhost:7070/tickets/byFlight/1
+
+
+###
+
+POST http://localhost:7070/tickets/
+Content-Type: application/json
+
+{
+  "id": 0,
+  "flight": {
+    "id": 1,
+    "aircraftId": 1,
+    "sourceCity": "KAZAN",
+    "destCity": "MOSCOW",
+    "departureTime": 1500000,
+    "arrivalTime": 1608163200000,
+    "journeyDuration": 100000,
+    "price": 30000
+  },
+  "passengerName": "Olesya"
+}
+
+###
+
+GET http://localhost:7070/tickets/byFlight/1
+
+###
+
+DELETE http://localhost:7070/tickets/
+
+
+###
+
+DELETE  http://localhost:7070/flights/1
+
+
+
+###
+
+GET https://project-skyscanner.herokuapp.com/flights/
